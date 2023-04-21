@@ -8,11 +8,14 @@
 #include "MassProcessor.h"
 #include "SimpleRandomMovementTrait.generated.h"
 
+/**
+ * https://www.bilibili.com/video/BV1nB4y1y7cX/
+ */
+
 USTRUCT()
 struct FSimpleMovementFragment : public FMassFragment
 {
 	GENERATED_BODY()
-	;
 
 	FVector Target;
 };

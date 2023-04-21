@@ -24,7 +24,7 @@ void USimpleRandomMovementProcessor::ConfigureQueries()
 	// Super::ConfigureQueries();
 	EntityQuery.AddRequirement<FTransformFragment>(EMassFragmentAccess::ReadWrite);
 	EntityQuery.AddRequirement<FSimpleMovementFragment>(EMassFragmentAccess::ReadWrite);
-	EntityQuery.RegisterWithProcessor(*this);
+	EntityQuery.RegisterWithProcessor(*this); //5.1
 }
 
 void USimpleRandomMovementProcessor::Execute(FMassEntityManager& EntityManager, FMassExecutionContext& Context)
