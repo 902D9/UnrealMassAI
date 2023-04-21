@@ -8,9 +8,64 @@ public class MassAI : ModuleRules
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 	
-		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore" });
+		PublicDependencyModuleNames.AddRange(
+			new string[]
+			{
+				// AI/MassAI Plugin Modules
+				"MassAIBehavior",
+				"MassAIDebug",
+				"MassNavigation",
+				"MassZoneGraphNavigation",
+				
+				// AI/MassCrowd Plugin Modules
+				"MassCrowd",
 
-		PrivateDependencyModuleNames.AddRange(new string[] {  });
+				// Runtime/MassEntity Plugin Modules
+				"MassEntity",
+
+				// Runtime/MassGameplay Plugin Modules
+				"MassActors",
+				"MassCommon",
+				"MassGameplayDebug",
+				"MassLOD",
+				"MassMovement",
+				"MassReplication",
+				"MassRepresentation",
+				"MassSignals",
+				"MassSimulation",
+				"MassSmartObjects",
+				"MassSpawner",
+				
+				"SmartObjectsModule", // work around until we find a better way to get data from smart object configs
+				
+				// Misc
+				"AnimToTexture",
+				"ContextualAnimation",
+				"Core",
+				"Engine",
+				"MotionWarping",
+				"DeveloperSettings",
+				"StateTreeModule",
+				"StructUtils",
+				"ZoneGraph",
+				"ZoneGraphDebug",
+				// "MassTraffic",
+			}
+		);
+			
+		
+		PrivateDependencyModuleNames.AddRange(
+			new string[]
+			{
+				"CoreUObject",
+				"Slate",
+				"SlateCore",
+				"GameplayTasks",
+				"MassSimulation",
+				"RenderCore",
+				"RHI"
+			}
+		);
 
 		// Uncomment if you are using Slate UI
 		// PrivateDependencyModuleNames.AddRange(new string[] { "Slate", "SlateCore" });
