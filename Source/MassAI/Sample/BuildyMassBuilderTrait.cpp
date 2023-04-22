@@ -11,5 +11,5 @@ void UBuildyMassBuilderTrait::BuildTemplate(FMassEntityTemplateBuildContext& Bui
 	BuildContext.AddFragment<FBuildyMassBuilderStateFragment>();
 	// todo add more data
 	// BuildContext.AddFragment<FBuildyMassBuilderFragment>();
-	BuildContext.AddFragment<FBuildyMassBuilderTag>();
+	BuildContext.AddTag<FBuildyMassBuilderTag>();
 }
