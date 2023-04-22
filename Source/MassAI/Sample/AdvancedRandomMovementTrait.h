@@ -14,5 +14,8 @@ UCLASS()
 class MASSAI_API UAdvancedRandomMovementTrait : public UMassEntityTraitBase
 {
 	GENERATED_BODY()
+
+protected:
+	virtual void BuildTemplate(FMassEntityTemplateBuildContext& BuildContext, const UWorld& World) const override;
 	
 };
