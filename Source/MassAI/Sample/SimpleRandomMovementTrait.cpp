@@ -14,7 +14,7 @@ void USimpleRandomMovementTrait::BuildTemplate(FMassEntityTemplateBuildContext& 
 
 USimpleRandomMovementProcessor::USimpleRandomMovementProcessor()
 {
-	bAutoRegisterWithProcessingPhases = true;
+	bAutoRegisterWithProcessingPhases = false;
 	ExecutionFlags = (int32)EProcessorExecutionFlags::All;
 	ExecutionOrder.ExecuteBefore.Add(UE::Mass::ProcessorGroupNames::Avoidance);
 }
