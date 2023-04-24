@@ -77,13 +77,13 @@ void UTNTGatherResourceBehaviorDefinition::Deactivate(FMassCommandBuffer& Comman
 			// 	SOComp->GetOwner()->Destroy();
 			// }));
 
-			// 5.1 待测
-			// CommandBuffer.PushCommand<FMassDeferredDestroyCommand>([SOComp, EntityContext](UMassEntitySubsystem& System)
-			// {
-			// 	SOComp->GetOwner()->Destroy();
-			// });
+			// 5.1 todo 待测
+			CommandBuffer.PushCommand<FMassDeferredDestroyCommand>([&SOComp, EntityContext](FMassEntityManager&)
+			{
+				SOComp->GetOwner()->Destroy();
+			});
 
-			SOComp->GetOwner()->Destroy();
+			// SOComp->GetOwner()->Destroy();
 		}
 	}
 }
