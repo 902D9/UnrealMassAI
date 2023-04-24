@@ -16,10 +16,10 @@ struct FTNTItemFragment : public FMassFragment
 	GENERATED_BODY()
 
 	UPROPERTY()
-	TEnumAsByte<ETNTResourceType> ItemType;
+	TEnumAsByte<ETNTResourceType> ItemType =  ETNTResourceType::Tree;
 
 	UPROPERTY()
-	FVector OldLocation;
+	FVector OldLocation = FVector::ZeroVector;
 
 	UPROPERTY()
 	bool bClaimed = false;

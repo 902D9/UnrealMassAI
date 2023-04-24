@@ -12,7 +12,8 @@
 				"MassSpawner",
 				"MassEntity",
 				"Engine",
-				"MassRepresentation"
+				"MassRepresentation",
+				"MassSmartObjects"
 			]
 		}
 	],
