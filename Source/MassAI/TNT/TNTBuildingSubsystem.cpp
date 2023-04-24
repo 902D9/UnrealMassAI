@@ -8,9 +8,9 @@
 
 void UTNTBuildingSubsystem::AddResourceQueue(FSmartObjectHandle& SOHandle)
 {
-	if (QueueResources.Find(SOHandle) == INDEX_NONE)
+	if (QueuedResources.Find(SOHandle) == INDEX_NONE)
 	{
-		QueueResources.Emplace(SOHandle);
+		QueuedResources.Emplace(SOHandle);
 	}
 }
 
@@ -78,11 +78,11 @@ bool UTNTBuildingSubsystem::FindItem(const FVector& Location, float Radius, ETNT
 bool UTNTBuildingSubsystem::ClaimResource(FSmartObjectHandle& OutResourceHandle)
 {
 	bool bSuccess = false;
-	if (QueueResources.Num() > 0)
+	if (QueuedResources.Num() > 0)
 	{
 		bSuccess = true;
-		OutResourceHandle = QueueResources[0];
-		QueueResources.RemoveAt(0);
+		OutResourceHandle = QueuedResources[0];
+		QueuedResources.RemoveAt(0);
 	}
 	return bSuccess;
 }

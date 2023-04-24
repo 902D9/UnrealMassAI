@@ -70,11 +70,13 @@ public:
 	              FMassEntityHandle& OutItemHandle);
 
 	// 获取要建造的队列
-	int32 GetQueueBuildings() const { return QueueBuildings.Num(); };
+	int32 GetQueuedBuildings() const { return QueueBuildings.Num(); };
 
 	// 获取队列的资源
-	void GetQueueResources(TArray<FSmartObjectHandle>& OutQueueResources) const { OutQueueResources = QueueResources; }
+	void GetQueuedResources(TArray<FSmartObjectHandle>& OutQueueResources) const { OutQueueResources = QueuedResources; }
 
+	int GetNumQueuedResources() const { return QueuedResources.Num(); }
+	
 	// 声明资源
 	bool ClaimResource(FSmartObjectHandle& OutResourceHandle);
 
@@ -85,7 +87,7 @@ public:
 
 	TArray<FMassEntityHandle> Agents;
 
-	TArray<FSmartObjectHandle> QueueResources;
+	TArray<FSmartObjectHandle> QueuedResources;
 
 	ItemHashGrid3D ItemGrid = ItemHashGrid3D(500.f, FMassEntityHandle());
 };
